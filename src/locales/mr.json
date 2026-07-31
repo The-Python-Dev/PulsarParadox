@@ -1,0 +1,29 @@
+{
+  "_note": "Marathi translations — structure mirrors en.json. Translations to be added.",
+  "nav": {
+    "work": "काम",
+    "services": "सेवा",
+    "about": "माझ्याबद्दल",
+    "blog": "ब्लॉग",
+    "paradoxes": "पॅरेडॉक्स",
+    "contact": "संपर्क",
+    "cta": "बोलूया →",
+    "logoAlt": "PulsarParadox होम"
+  },
+  "hero": {
+    "headline_line1": "मी वेबसाइट बनवत नाही।",
+    "headline_line2": "मी पॅरेडॉक्स घडवतो।",
+    "subheadline": "फाउंडर्ससाठी संपूर्ण डिजिटल टूलकिट — वेबसाइट, कॉपी, SEO आणि सर्वकाही.",
+    "cta_primary": "तुमचा पॅरेडॉक्स सुरू करा →",
+    "cta_secondary": "काम पाहा",
+    "scroll_indicator": "↓ एक्सप्लोर करण्यासाठी स्क्रोल करा"
+  },
+  "loading": {
+    "text": "पॅरेडॉक्स घडवत आहे..."
+  },
+  "footer": {
+    "tagline": "बनवा। मोडा। दुरुस्त करा। पुन्हा करा।",
+    "copyright": "© 2025 PulsarParadox. पुण्यात निर्मित, जगभर तैनात.",
+    "credit": "Designed & Developed by @thepythondev"
+  }
+}

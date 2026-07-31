@@ -1,0 +1,38 @@
+/* ============================================================
+   src/pages/page-placeholder.css
+   Temporary placeholder styles for Phase 1 page stubs.
+   Remove this file (and its imports) when pages are built out.
+   ============================================================ */
+
+.page-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
+  text-align: center;
+  padding: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.placeholder-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--primary);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.page-placeholder h1 {
+  font-size: var(--text-3xl);
+  background: linear-gradient(135deg, var(--primary), var(--code));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-placeholder p {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}

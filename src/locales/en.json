@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "about": "About",
+    "blog": "Blog",
+    "paradoxes": "Paradoxes",
+    "contact": "Contact",
+    "cta": "Let's Talk →",
+    "logoAlt": "PulsarParadox home"
+  },
+  "hero": {
+    "headline_line1": "I don't build websites.",
+    "headline_line2": "I forge paradoxes.",
+    "subheadline": "The complete digital toolkit for founders — websites, copy, SEO, and everything in between. Agency quality. Freelancer speed. Zero fluff.",
+    "cta_primary": "Start Your Paradox →",
+    "cta_secondary": "Explore Work",
+    "scroll_indicator": "↓ Scroll to explore"
+  },
+  "intro": {
+    "label": "// WHAT IS PULSARPARADOX?",
+    "heading": "Your brand deserves more than a template.",
+    "body_1": "PulsarParadox is a one-person digital studio that builds websites, writes copy, and engineers growth systems for founders who refuse to blend in.",
+    "body_2": "No cookie-cutter templates. No bloated teams. No endless revision cycles. Just sharp code, sharper words, and obsessive attention to every pixel.",
+    "stat_1_value": "2",
+    "stat_1_label": "Ships Launched",
+    "stat_2_value": "100%",
+    "stat_2_label": "Built From Scratch",
+    "stat_3_value": "0",
+    "stat_3_label": "Templates Used",
+    "stat_4_value": "24h",
+    "stat_4_label": "Response Time"
+  },
+  "techStack": {
+    "label": "// TECH ARSENAL",
+    "heading": "The stack behind every paradox.",
+    "subheading": "Every tool chosen with intent. No framework FOMO — just the right weapon for the right battle.",
+    "footer": "And always learning more. The toolkit never stops expanding."
+  },
+  "projects": {
+    "label": "// SELECTED WORK",
+    "heading": "Paradoxes, shipped.",
+    "subheading": "Each project is a problem solved, a brand elevated, and a founder who stopped worrying about their digital presence.",
+    "cta": "See All Work →",
+    "view_project": "View Project →",
+    "get_notified": "Get Notified →"
+  },
+  "philosophy": {
+    "label": "// THE PARADOX PRINCIPLES",
+    "heading": "Three rules. Zero exceptions.",
+    "p1_title": "BUILD → ATTACK → BREAK → REPAIR",
+    "p1_body": "I don't wait for perfection. I build fast, stress-test hard, break what's fragile, and rebuild it stronger. Every paradox is forged in fire.",
+    "p2_title": "UNDER PROMISE → OVER DELIVER",
+    "p2_body": "I'll tell you I'll build something good. Then I'll hand you something that makes you rethink what \"good\" even meant.",
+    "p3_title": "QUALITY HAS NO CLIENT TIER",
+    "p3_body": "Whether it's your first website or your fifth rebrand — the obsession stays the same. No shortcuts. No \"good enough.\" Ever."
+  },
+  "testimonials": {
+    "label": "// SIGNAL LOG",
+    "empty_title": "Transmission incoming...",
+    "empty_body": "This section is currently awaiting its first signal. Be the first founder to send one.",
+    "empty_cta": "Start Your Paradox →"
+  },
+  "finalCta": {
+    "heading": "Ready to build something paradoxical?",
+    "body_1": "Whether you need a website that converts, copy that connects, or a complete digital overhaul — let's talk.",
+    "body_2": "No pitch decks. No 47-step onboarding forms. Just a conversation about what you need and how I'll build it.",
+    "cta": "Let's Talk →",
+    "micro": "Average response time: under 24 hours ⚡"
+  },
+  "footer": {
+    "tagline": "Build. Break. Repair. Repeat.",
+    "nav_heading": "PAGES",
+    "connect_heading": "CONNECT",
+    "resources_heading": "RESOURCES",
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "services": "Services",
+    "contact": "Contact",
+    "github": "GitHub",
+    "instagram": "Instagram",
+    "email": "Email",
+    "blog": "Blog",
+    "paradoxes": "Paradoxes",
+    "copyright": "© 2025 PulsarParadox. Forged in Pune, deployed globally.",
+    "credit": "Designed & Developed by @thepythondev"
+  },
+  "loading": {
+    "text": "Forging paradox..."
+  },
+  "common": {
+    "available": "🟢 CURRENTLY AVAILABLE",
+    "booked": "🟡 CURRENTLY BOOKED"
+  }
+}
