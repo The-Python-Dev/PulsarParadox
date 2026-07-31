@@ -18,6 +18,8 @@ import './styles/reset.css';
 import './styles/global.css';
 import './pages/page-placeholder.css';
 
+import Navbar from './components/Navbar';
+
 // ── Lazy-loaded pages (code splitting per route) ──────────────
 const Home       = lazy(() => import('./pages/Home'));
 const About      = lazy(() => import('./pages/About'));
@@ -51,12 +53,7 @@ const PageLoader = () => (
 const App = () => {
   return (
     <div className="app">
-      {/*
-        PHASE 2: Uncomment as components are built
-        <CustomCursor />
-        <LoadingScreen />
-        <Navbar />
-      */}
+      <Navbar />
 
       <main>
         <Suspense fallback={<PageLoader />}>
