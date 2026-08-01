@@ -40,17 +40,22 @@
     <link rel="canonical" href="https://pulsarparadox.netlify.app" />
   </head>
   <body>
-    <!-- Netlify Forms detection — hidden form so build bot registers the schema -->
-    <!-- Do NOT remove: without this, form submissions on /contact will 404 -->
-    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <input type="text" name="projectType" />
-      <input type="text" name="budget" />
-      <textarea name="message"></textarea>
-    </form>
+  <!-- Netlify Forms detection — hidden form so build bot registers schema -->
+  <!-- DO NOT REMOVE: without this, /contact form submissions will 404 -->
+  <form
+    name="contact"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    style="display: none;"
+  >
+    <input type="text" name="name" />
+    <input type="email" name="email" />
+    <input type="text" name="projectType" />
+    <input type="text" name="budget" />
+    <textarea name="message"></textarea>
+  </form>
 
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
 </html>
