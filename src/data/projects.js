@@ -28,7 +28,7 @@ export const projects = [
     status: 'shipped',
     tags: ['PRODUCTIVITY', 'REACT', 'OPEN SOURCE'],
     links: {
-      live: null,           // ← Fill in when hosted
+      live: null,
       github: 'https://github.com/The-Python-Dev/Flipodoro',
     },
   },
@@ -51,7 +51,7 @@ export const projects = [
     status: 'shipped',
     tags: ['NOTES APP', 'PYTHON', 'OPEN SOURCE'],
     links: {
-      live: null,           // Tkinter — not web-deployable
+      live: null,
       github: 'https://github.com/The-Python-Dev/NeuroNotes',
     },
   },
@@ -97,3 +97,9 @@ export const projects = [
     },
   },
 ];
+
+// ─────────────────────────────────────────────────────────────
+// Alias for backwards compatibility with Home page's
+// FeaturedProjects component. Shows the first 3 projects.
+// ─────────────────────────────────────────────────────────────
+export const featuredProjects = projects.slice(0, 3);
