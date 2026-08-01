@@ -1,0 +1,215 @@
+/* ============================================================
+   PHILOSOPHY SECTION
+   src/components/Philosophy/Philosophy.css
+   ============================================================ */
+
+.philosophy {
+  background: var(--bg-deep);
+  padding: var(--space-xl) var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient background glow */
+.philosophy::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.philosophy::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.philosophy__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.philosophy__header {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.philosophy__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+.philosophy__heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 5vw, var(--text-3xl));
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ── Grid ────────────────────────────────────────────────── */
+.philosophy__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.philosophy__card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  position: relative;
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+/* Gradient border effect on hover */
+.philosophy__card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--primary), var(--code));
+  border-radius: var(--radius-lg);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+}
+
+.philosophy__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg), var(--shadow-violet);
+}
+
+.philosophy__card:hover::before {
+  opacity: 1;
+}
+
+/* ── Card Number ─────────────────────────────────────────── */
+.philosophy__card-number {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: var(--tracking-widest);
+}
+
+/* ── Card Icon ───────────────────────────────────────────── */
+.philosophy__card-icon {
+  font-size: var(--text-3xl);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+  display: inline-block;
+  transition: transform var(--transition-spring);
+}
+
+.philosophy__card:hover .philosophy__card-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* ── Card Title ──────────────────────────────────────────── */
+.philosophy__card-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--primary-light);
+  letter-spacing: var(--tracking-wide);
+  line-height: var(--leading-snug);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ── Card Description ────────────────────────────────────── */
+.philosophy__card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* ── Responsive: Tablet ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .philosophy__grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .philosophy {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .philosophy__container {
+    gap: var(--space-md);
+  }
+
+  .philosophy__card {
+    padding: var(--space-sm);
+  }
+
+  .philosophy__card-title {
+    font-size: var(--text-xs);
+  }
+
+  .philosophy__card-description {
+    font-size: var(--text-sm);
+  }
+}
+
+/* ── Responsive: Mobile ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .philosophy__label {
+    font-size: 10px;
+  }
+
+  .philosophy__card-icon {
+    font-size: var(--text-2xl);
+  }
+}
