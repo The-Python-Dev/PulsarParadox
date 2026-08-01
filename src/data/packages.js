@@ -11,6 +11,7 @@ export const packages = [
     emoji: '🔷',
     name: 'FOUNDATION',
     subtitle: '"The Launchpad"',
+    
     price: '₹25,000',
     priceNote: 'Starting at',
     timeline: '2-3 weeks',
