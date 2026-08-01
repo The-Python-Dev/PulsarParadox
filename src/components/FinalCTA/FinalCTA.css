@@ -1,0 +1,249 @@
+/* ============================================================
+   FINAL CTA SECTION
+   src/components/FinalCTA/FinalCTA.css
+   ============================================================ */
+
+.final-cta {
+  background: var(--bg-deep);
+  padding: var(--space-xl) var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glows — dramatic dual gradient */
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow-primary 6s ease-in-out infinite;
+}
+
+.final-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulse-glow-cyan 6s ease-in-out infinite 3s;
+}
+
+@keyframes pulse-glow-primary {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.1); }
+}
+
+@keyframes pulse-glow-cyan {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50%      { opacity: 0.9; transform: scale(1.15); }
+}
+
+.final-cta__container {
+  max-width: var(--max-width-narrow);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.final-cta__content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+/* ── Decorative Badge ────────────────────────────────────── */
+.final-cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-2xs) var(--space-sm);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-full);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.final-cta__badge-icon {
+  font-size: var(--text-base);
+  display: inline-block;
+  animation: spin-slow 8s linear infinite;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ── Heading ─────────────────────────────────────────────── */
+.final-cta__heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, var(--text-4xl));
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  margin: 0;
+  max-width: 700px;
+}
+
+.final-cta__heading-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--code) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+/* ── Body Text ───────────────────────────────────────────── */
+.final-cta__body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, var(--text-lg));
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+  margin: 0;
+  max-width: 600px;
+}
+
+.final-cta__body--emphasis {
+  color: var(--text-muted);
+  font-size: clamp(0.95rem, 1.8vw, var(--text-base));
+}
+
+/* ── Button ──────────────────────────────────────────────── */
+.final-cta__button-wrapper {
+  margin-top: var(--space-sm);
+}
+
+.final-cta__button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-violet);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shimmer effect on hover */
+.final-cta__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.final-cta__button:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 0 80px rgba(139, 92, 246, 0.6);
+}
+
+.final-cta__button:hover::before {
+  left: 100%;
+}
+
+.final-cta__button-arrow {
+  transition: transform var(--transition-base);
+}
+
+.final-cta__button:hover .final-cta__button-arrow {
+  transform: translateX(6px);
+}
+
+.final-cta__button:active {
+  transform: translateY(-1px) scale(1);
+}
+
+/* ── Micro-copy ──────────────────────────────────────────── */
+.final-cta__microcopy {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  letter-spacing: var(--tracking-wide);
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2xs);
+}
+
+.final-cta__microcopy-bolt {
+  color: var(--accent);
+  font-size: var(--text-base);
+  animation: bolt-flash 2s ease-in-out infinite;
+}
+
+@keyframes bolt-flash {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.15); }
+}
+
+/* ── Responsive: Tablet ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .final-cta {
+    padding: var(--space-lg) var(--space-sm);
+  }
+
+  .final-cta__content {
+    gap: var(--space-sm);
+  }
+
+  .final-cta__button {
+    font-size: var(--text-base);
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
+/* ── Responsive: Mobile ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .final-cta__badge {
+    font-size: 10px;
+  }
+
+  .final-cta__microcopy {
+    font-size: var(--text-xs);
+  }
+}
+
+/* ── Reduced Motion Support ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .final-cta::before,
+  .final-cta::after,
+  .final-cta__badge-icon,
+  .final-cta__microcopy-bolt {
+    animation: none;
+  }
+}
