@@ -1,48 +1,34 @@
 /**
  * src/data/badges.js
  *
- * Rotating badge data for the Hero section.
- * The "AVAILABLE" badge is conditionally rendered based on
- * the VITE_AVAILABLE environment variable.
- *
- * Badge rotation: 6 items, 3s each, continuous loop.
+ * Rotating badges for Hero section.
+ * The "available" badge is CONDITIONAL — controlled via env variable VITE_AVAILABLE.
+ * Set VITE_AVAILABLE=false in .env to hide it when fully booked.
  */
 
-export const heroBadges = [
-  {
-    id: 1,
-    icon: '⚡',
-    text: "THE FOUNDER'S TOOLKIT",
-    conditional: false,
-  },
-  {
-    id: 2,
-    icon: '☕',
-    text: 'POWERED BY CAFFEINE & CHAOS',
-    conditional: false,
-  },
-  {
-    id: 3,
-    icon: '🌀',
-    text: '100% HUMAN · 0% BORING',
-    conditional: false,
-  },
-  {
-    id: 4,
-    icon: '🌌',
-    text: 'CODING SINCE THE BIG BANG',
-    conditional: false,
-  },
-  {
-    id: 5,
-    icon: '💯',
-    text: 'AGENCY QUALITY · SOLO SPEED',
-    conditional: false,
-  },
-  {
-    id: 6,
-    icon: '🟢',
-    text: 'AVAILABLE FOR NEW PARADOXES',
-    conditional: true, // Only shown when VITE_AVAILABLE=true
-  },
+// Read env variable (default to true if not set)
+const isAvailable = import.meta.env.VITE_AVAILABLE !== 'false';
+
+// Base badges (always shown)
+const baseBadges = [
+  { id: 1, icon: '⚡', text: "THE FOUNDER'S TOOLKIT" },
+  { id: 2, icon: '☕', text: 'POWERED BY CAFFEINE & CHAOS' },
+  { id: 3, icon: '🌀', text: '100% HUMAN · 0% BORING' },
+  { id: 4, icon: '🌌', text: 'CODING SINCE THE BIG BANG' },
+  { id: 5, icon: '💯', text: 'AGENCY QUALITY · SOLO SPEED' },
 ];
+
+// Conditional availability badge
+const availabilityBadge = {
+  id: 6,
+  icon: '🟢',
+  text: 'AVAILABLE FOR NEW PARADOXES',
+};
+
+// Export final badge list based on availability
+export const heroBadges = isAvailable
+  ? [...baseBadges, availabilityBadge]
+  : baseBadges;
+
+// Duration each badge shows (in milliseconds)
+export const BADGE_DURATION = 3000;
