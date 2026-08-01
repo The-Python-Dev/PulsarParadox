@@ -1,6 +1,7 @@
 import ServicesHero from '../components/ServicesHero';
 import ServiceCategories from '../components/ServiceCategories';
 import Packages from '../components/Packages';
+import Process from '../components/Process';
 import './Services.css';
 
 const Services = () => {
@@ -9,7 +10,8 @@ const Services = () => {
       <ServicesHero />
       <ServiceCategories />
       <Packages />
-      {/* Process, FAQ, CTA coming next */}
+      <Process />
+      {/* FAQ, CTA coming next */}
     </>
   );
 };
