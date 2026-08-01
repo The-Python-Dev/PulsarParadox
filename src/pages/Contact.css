@@ -1,1 +1,86 @@
-/* src/pages/Contact.css */
+/* ============================================================
+   CONTACT PAGE LAYOUT
+   src/pages/Contact.css
+   ============================================================ */
+
+/* ── Main grid section (Info + Form) ─────────────────────── */
+.contact-main {
+  background: var(--bg-primary);
+  padding: var(--space-xl) var(--space-md);
+  position: relative;
+}
+
+.contact-main__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact-main__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+/* ── Availability section ────────────────────────────────── */
+.contact-availability-section {
+  background: var(--bg-primary);
+  padding: 0 var(--space-md) var(--space-xl);
+}
+
+.contact-availability-section__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ── FAQ section ─────────────────────────────────────────── */
+.contact-faq-section {
+  background: var(--bg-deep);
+  padding: var(--space-xl) var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-faq-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-faq-section__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Responsive: Tablet ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .contact-main__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-main,
+  .contact-availability-section,
+  .contact-faq-section {
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+  }
+
+  .contact-main,
+  .contact-faq-section {
+    padding-top: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+}
