@@ -3,6 +3,11 @@
  *
  * Service packages for the Services page.
  * POPULAR flag highlights the Growth Engine tier.
+ *
+ * Pricing ladder (rebalanced for smoother rhythm):
+ *   Foundation:    ₹25,000  → entry
+ *   Growth Engine: ₹55,000  → 2.2x jump
+ *   Premium Brand: ₹1,10,000 → 2x jump
  */
 
 export const packages = [
@@ -11,7 +16,6 @@ export const packages = [
     emoji: '🔷',
     name: 'FOUNDATION',
     subtitle: '"The Launchpad"',
-    
     price: '₹25,000',
     priceNote: 'Starting at',
     timeline: '2-3 weeks',
@@ -34,7 +38,7 @@ export const packages = [
     emoji: '💜',
     name: 'GROWTH ENGINE',
     subtitle: '"The Full Toolkit"',
-    price: '₹60,000',
+    price: '₹55,000',
     priceNote: 'Starting at',
     timeline: '4-6 weeks',
     popular: true,
@@ -57,7 +61,7 @@ export const packages = [
     emoji: '🟡',
     name: 'PREMIUM BRAND',
     subtitle: '"The Paradox Experience"',
-    price: '₹1,00,000',
+    price: '₹1,10,000',
     priceNote: 'Starting at',
     timeline: '6-10 weeks',
     popular: false,
