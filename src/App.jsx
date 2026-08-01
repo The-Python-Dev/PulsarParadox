@@ -17,8 +17,8 @@ import './styles/variables.css';
 import './styles/reset.css';
 import './styles/global.css';
 import './pages/page-placeholder.css';
-
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 // ── Lazy-loaded pages (code splitting per route) ──────────────
 const Home       = lazy(() => import('./pages/Home'));
@@ -70,10 +70,7 @@ const App = () => {
         </Suspense>
       </main>
 
-      {/*
-        PHASE 2: Uncomment when Footer is built
-        <Footer />
-      */}
+      <Footer />
     </div>
   );
 };
