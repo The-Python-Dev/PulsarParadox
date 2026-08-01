@@ -28,34 +28,31 @@
     <link rel="alternate icon" href="/favicon.ico" />
 
     <!-- Font Preloads (prevent FOUT) -->
-    <!-- Google Fonts preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Fontshare preconnect -->
     <link rel="preconnect" href="https://api.fontshare.com" />
-    <!-- Geist Mono CDN preconnect -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://pulsarparadox.netlify.app" />
   </head>
   <body>
-  <!-- Netlify Forms detection — hidden form so build bot registers schema -->
-  <!-- DO NOT REMOVE: without this, /contact form submissions will 404 -->
-  <form
-    name="contact"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    style="display: none;"
-  >
-    <input type="text" name="name" />
-    <input type="email" name="email" />
-    <input type="text" name="projectType" />
-    <input type="text" name="budget" />
-    <textarea name="message"></textarea>
-  </form>
+    <!-- Netlify Forms detection — hidden form so build bot registers schema -->
+    <!-- DO NOT REMOVE: without this, /contact form submissions will 404 -->
+    <form
+      name="contact"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      style="display: none;"
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="projectType" />
+      <input type="text" name="budget" />
+      <textarea name="message"></textarea>
+    </form>
 
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
