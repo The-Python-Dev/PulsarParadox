@@ -21,9 +21,9 @@ const footerData = {
     { to: '/contact',   label: 'Contact' },
   ],
   connect: [
-    { href: 'https://github.com/thepythondev',   label: 'GitHub',    external: true },
-    { href: 'https://instagram.com/thepythondev', label: 'Instagram', external: true },
-    { href: 'mailto:pulsarparadox@gmail.com',    label: 'Email',     external: true },
+    { href: 'https://github.com/The-Python-Dev',   label: 'GitHub',    external: true },
+    { href: 'https://instagram.com/thepythondev',  label: 'Instagram', external: true },
+    { href: 'mailto:pulsarparadox@gmail.com',      label: 'Email',     external: true },
   ],
   resources: [
     { to: '/blog',       label: 'Blog' },

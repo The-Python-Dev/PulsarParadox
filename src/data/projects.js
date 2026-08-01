@@ -1,24 +1,21 @@
 /**
  * src/data/projects.js
  *
- * Portfolio project data.
- * STATUS values: 'shipped' | 'in-progress' | 'classified'
+ * Projects data — used by FeaturedProjects section on Home
+ * AND the full /projects (Work) page.
+ *
+ * Add new projects here as they ship.
  */
 
 export const projects = [
   {
-    id: 1,
+    id: 'flipodoro',
     number: '01',
     title: 'Flipodoro',
-    slug: 'flipodoro',
-    tagline: 'Focus timer with a flip.',
-    description:
-      'A Pomodoro productivity timer with flip-card animations, session tracking, and a clean dark UI. Built because every existing Pomodoro app was either ugly, bloated, or both.',
-    stack: ['React', 'Vite', 'CSS Animations', 'LocalStorage'],
-    type: 'Productivity Tool',
     tags: ['PRODUCTIVITY', 'REACT', 'OPEN SOURCE'],
-    tagColor: 'violet',
-    status: 'shipped',
+    tagColor: 'primary',
+    description: 'A Pomodoro timer with a twist — flip-card animations, session tracking, and a clean UI that makes focus feel premium.',
+    stack: ['React', 'Vite', 'CSS Animations', 'LocalStorage'],
     features: [
       'Flip-card countdown animation',
       'Customizable work/break intervals',
@@ -26,24 +23,23 @@ export const projects = [
       'Clean, distraction-free interface',
       'Fully responsive',
     ],
+    status: 'shipped',
+    statusLabel: '✅ Shipped · Open Source',
+    type: 'Productivity Tool',
     links: {
-      live: '#',    // Update with real URL
-      github: '#',  // Update with real GitHub URL
+      demo: 'https://github.com/The-Python-Dev/flipodoro',
+      github: 'https://github.com/The-Python-Dev/flipodoro',
     },
+    featured: true,
   },
   {
-    id: 2,
+    id: 'neuronotes',
     number: '02',
     title: 'NeuroNotes',
-    slug: 'neuronotes',
-    tagline: 'Notes that work like your brain.',
-    description:
-      'An intelligent note-taking app designed for developers who think in tags, not folders. Built because I needed a notes app that worked the way my brain works — fast, searchable, minimal.',
-    stack: ['Python', 'Tkinter', 'JSON Storage'],
-    type: 'Developer Tool',
     tags: ['NOTES APP', 'PYTHON', 'OPEN SOURCE'],
-    tagColor: 'violet',
-    status: 'shipped',
+    tagColor: 'primary',
+    description: 'An intelligent note-taking app designed for developers. Tag, search, and organize thoughts at the speed of typing.',
+    stack: ['Python', 'Tkinter', 'JSON Storage'],
     features: [
       'Tag-based organization',
       'Instant search across all notes',
@@ -51,46 +47,45 @@ export const projects = [
       'Auto-save functionality',
       'Export capabilities',
     ],
+    status: 'shipped',
+    statusLabel: '✅ Shipped · Open Source',
+    type: 'Developer Tool',
     links: {
-      live: null,
-      github: '#',  // Update with real GitHub URL
+      github: 'https://github.com/The-Python-Dev/neuronnotes',
     },
+    featured: true,
   },
   {
-    id: 3,
+    id: 'classified-01',
     number: '03',
-    title: '[CLASSIFIED]',
-    slug: 'classified-01',
-    tagline: 'Something new is being forged.',
-    description:
-      'Currently in the workshop. Being stress-tested, polished, and prepared for deployment. This one pushes into new territory. More details dropping soon.',
-    stack: ['[REDACTED]'],
-    type: null,
+    title: 'Project Classified',
     tags: ['IN PROGRESS', 'LAUNCHING SOON'],
-    tagColor: 'gold',
-    status: 'classified',
+    tagColor: 'accent',
+    description: 'Something new is being forged in the workshop. Stay tuned — this one\'s going to break things (in a good way).',
+    stack: ['[REDACTED]'],
     features: [],
-    links: {
-      notify: '/contact',
-    },
+    status: 'in-progress',
+    statusLabel: '🔄 In Development',
+    type: 'Coming Soon',
+    links: {},
+    featured: true,
   },
   {
-    id: 4,
+    id: 'classified-02',
     number: '04',
-    title: '[CLASSIFIED]',
-    slug: 'classified-02',
-    tagline: 'Another paradox being forged.',
-    description:
-      'Another paradox being forged. Two classified projects means twice the anticipation.',
+    title: 'Project Classified',
+    tags: ['IN PROGRESS', 'LAUNCHING SOON'],
+    tagColor: 'accent',
+    description: 'Another paradox being forged. Two classified projects means twice the anticipation.',
     stack: ['[REDACTED]'],
-    type: null,
-    tags: ['IN PROGRESS'],
-    tagColor: 'gold',
-    status: 'classified',
     features: [],
+    status: 'in-progress',
+    statusLabel: '🔄 In Development',
+    type: 'Coming Soon',
     links: {},
+    featured: false,
   },
 ];
 
-/** Featured projects shown on the Home page (first 3) */
-export const featuredProjects = projects.slice(0, 3);
+// Helper: get only featured projects (for Home page)
+export const featuredProjects = projects.filter((p) => p.featured);
