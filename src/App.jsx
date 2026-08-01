@@ -9,10 +9,12 @@
  * - BrowserRouter wraps everything (in main.jsx)
  * - App renders Navbar + Routes + Footer
  * - Each Route is lazily loaded for code splitting
+ * - useScrollToTop() resets scroll position on route change
  */
 
 import { lazy, Suspense } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import { useScrollToTop } from './hooks';
 import './styles/variables.css';
 import './styles/reset.css';
 import './styles/global.css';
@@ -51,6 +53,9 @@ const PageLoader = () => (
 );
 
 const App = () => {
+  // Reset scroll position to top on every route change
+  useScrollToTop();
+
   return (
     <div className="app">
       <Navbar />
