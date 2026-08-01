@@ -1,8 +1,6 @@
 /**
  * vite.config.js
  * Vite configuration for PulsarParadox
- * 
- * Fixed: Added missing `path` import + ES module __dirname workaround
  */
 
 import path from 'path';
@@ -10,17 +8,14 @@ import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// ES module workaround for __dirname (not defined in ESM by default)
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   
   resolve: {
     alias: {
-      // Import aliases for clean paths
       '@':           path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/components'),
       '@pages':      path.resolve(__dirname, './src/pages'),
@@ -37,12 +32,14 @@ export default defineConfig({
     target: 'esnext',
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'router':       ['react-router-dom'],
-          'animation':    ['framer-motion', 'gsap'],
-          'three':        ['three', '@react-three/fiber', '@react-three/drei'],
-          'i18n':         ['i18next', 'react-i18next'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-router')) return 'router';
+            if (id.includes('react') || id.includes('react-dom')) return 'react-vendor';
+            if (id.includes('framer-motion') || id.includes('gsap')) return 'animation';
+            if (id.includes('three') || id.includes('@react-three')) return 'three';
+            if (id.includes('i18next')) return 'i18n';
+          }
         },
       },
     },
