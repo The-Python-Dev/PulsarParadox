@@ -1,0 +1,256 @@
+/* ============================================================
+   HERO SECTION
+   src/components/Hero/Hero.css
+   ============================================================ */
+
+.hero {
+  min-height: 100vh;
+  background: var(--bg-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: calc(var(--navbar-height) + var(--space-lg)) var(--space-md) var(--space-lg);
+  overflow: hidden;
+}
+
+/* Subtle cosmic radial gradient background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(34, 211, 238, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__container {
+  max-width: var(--max-width);
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  text-align: center;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ── Badge Wrapper ───────────────────────────────────────── */
+.hero__badge-wrapper {
+  margin-bottom: var(--space-xs);
+}
+
+/* ── Main Headline ───────────────────────────────────────── */
+.hero__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, var(--text-4xl));
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--text-primary);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.hero__headline-line {
+  display: block;
+}
+
+.hero__headline-accent {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--code) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+  padding-right: 0.05em;
+}
+
+.hero__headline-punctuation {
+  color: var(--primary);
+}
+
+/* ── Subheadline ─────────────────────────────────────────── */
+.hero__subheadline {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, var(--text-lg));
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0;
+}
+
+.hero__subheadline-break {
+  display: inline;
+}
+
+.hero__subheadline-emphasis {
+  color: var(--text-primary);
+  font-weight: 500;
+  display: inline-block;
+  margin-top: var(--space-2xs);
+}
+
+/* ── CTAs ────────────────────────────────────────────────── */
+.hero__ctas {
+  display: flex;
+  gap: var(--space-sm);
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--space-sm);
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Primary CTA — solid violet */
+.hero__cta--primary {
+  background: var(--primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-violet);
+}
+
+.hero__cta--primary:hover {
+  background: var(--primary-light);
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.hero__cta--primary:active {
+  transform: translateY(0);
+}
+
+.hero__cta-arrow {
+  display: inline-block;
+  transition: transform var(--transition-base);
+}
+
+.hero__cta--primary:hover .hero__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Ghost CTA — outlined */
+.hero__cta--ghost {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+
+.hero__cta--ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary);
+  color: var(--primary-light);
+}
+
+/* ── Scroll Indicator ────────────────────────────────────── */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: var(--space-md);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
+  animation: scroll-bounce 2.5s ease-in-out infinite;
+  z-index: 1;
+}
+
+.hero__scroll-text {
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.hero__scroll-arrow {
+  font-size: var(--text-base);
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.7; }
+  50%      { transform: translateX(-50%) translateY(6px); opacity: 1; }
+}
+
+/* ── Responsive: Tablet ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(var(--navbar-height) + var(--space-md)) var(--space-sm) var(--space-md);
+  }
+
+  .hero__headline {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .hero__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Responsive: Mobile ─────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero__headline {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+  }
+
+  .hero__subheadline {
+    font-size: var(--text-base);
+  }
+
+  .hero__scroll-indicator {
+    bottom: var(--space-sm);
+    font-size: 10px;
+  }
+}
+
+/* ── Reduced Motion Support ─────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll-indicator {
+    animation: none;
+  }
+}
