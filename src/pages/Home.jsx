@@ -8,6 +8,7 @@ import IntroSection from '../components/IntroSection';
 import TechStack from '../components/TechStack';
 import FeaturedProjects from '../components/FeaturedProjects';
 import Philosophy from '../components/Philosophy';
+import TestimonialsEmpty from '../components/TestimonialsEmpty';
 import './Home.css';
 
 const Home = () => {
@@ -18,8 +19,8 @@ const Home = () => {
       <TechStack />
       <FeaturedProjects />
       <Philosophy />
-      {/* More sections coming soon:
-          <TestimonialsEmpty />
+      <TestimonialsEmpty />
+      {/* Coming soon:
           <FinalCTA />
       */}
     </>
