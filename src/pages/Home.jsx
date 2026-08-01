@@ -5,6 +5,7 @@
 
 import Hero from '../components/Hero';
 import IntroSection from '../components/IntroSection';
+import TechStack from '../components/TechStack';
 import './Home.css';
 
 const Home = () => {
@@ -12,8 +13,8 @@ const Home = () => {
     <>
       <Hero />
       <IntroSection />
+      <TechStack />
       {/* More sections coming soon:
-          <TechStack />
           <FeaturedProjects />
           <Philosophy />
           <TestimonialsEmpty />
