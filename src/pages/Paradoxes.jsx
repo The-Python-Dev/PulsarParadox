@@ -1,20 +1,9 @@
-/**
- * src/pages/Paradoxes.jsx
- * Route: /paradoxes
- */
+import ParadoxesHero from '../components/ParadoxesHero';
 
-import './Paradoxes.css';
-
-const Paradoxes = () => {
+export default function Paradoxes() {
   return (
-    <main className="page paradoxes-page">
-      <div className="page-placeholder">
-        <span className="placeholder-label">// PARADOXES · THE PLAYGROUND</span>
-        <h1>Paradoxes Page</h1>
-        <p>Phase 4 — coming soon.</p>
-      </div>
+    <main>
+      <ParadoxesHero />
     </main>
   );
-};
-
-export default Paradoxes;
+}
