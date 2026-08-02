@@ -1,0 +1,391 @@
+/* ─────────────────────────────────────────────
+   ParadoxesPlayground — featured + upcoming
+───────────────────────────────────────────── */
+
+.paradoxes-playground {
+  background: var(--bg-primary);
+  padding: var(--space-xl) 0 var(--space-xl) 0;
+  padding-top: 6rem;
+  padding-bottom: 8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.paradoxes-playground__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* Mono labels */
+.paradoxes-playground__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--primary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+/* ─────────────────────────────────────────────
+   Featured card — STACKED layout
+───────────────────────────────────────────── */
+
+.paradoxes-playground__featured {
+  margin-bottom: var(--space-xl);
+}
+
+.paradoxes-playground__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg, 16px);
+  overflow: hidden;
+  position: relative;
+  transition: border-color var(--transition, 0.3s ease);
+}
+
+.paradoxes-playground__card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--code) 100%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.paradoxes-playground__card:hover::before {
+  opacity: 0.6;
+}
+
+/* Image — full width, cinematic */
+.paradoxes-playground__image-link {
+  display: block;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.paradoxes-playground__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+
+.paradoxes-playground__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.paradoxes-playground__image-link:hover .paradoxes-playground__image {
+  transform: scale(1.03);
+}
+
+.paradoxes-playground__image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: var(--space-lg);
+  background: linear-gradient(
+    to top,
+    rgba(8, 8, 15, 0.85) 0%,
+    rgba(8, 8, 15, 0) 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.paradoxes-playground__image-link:hover .paradoxes-playground__image-overlay {
+  opacity: 1;
+}
+
+.paradoxes-playground__view-live {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--code);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Content — below image */
+.paradoxes-playground__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+}
+
+.paradoxes-playground__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+}
+
+.paradoxes-playground__meta-item {
+  text-transform: uppercase;
+}
+
+.paradoxes-playground__meta-dot {
+  color: var(--text-faint);
+}
+
+.paradoxes-playground__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Story */
+.paradoxes-playground__story {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  max-width: 720px;
+}
+
+.paradoxes-playground__story p {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.paradoxes-playground__gradient-word {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--code) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.paradoxes-playground__story-punch {
+  color: var(--text-primary) !important;
+  font-style: italic;
+  padding-top: var(--space-xs);
+}
+
+/* Actions */
+.paradoxes-playground__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.paradoxes-playground__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm, 8px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.paradoxes-playground__btn--primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--code) 100%
+  );
+  color: var(--bg-deep);
+  font-weight: 600;
+}
+
+.paradoxes-playground__btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.3);
+}
+
+.paradoxes-playground__btn--ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-strong);
+}
+
+.paradoxes-playground__btn--ghost:hover {
+  color: var(--text-primary);
+  border-color: var(--primary);
+}
+
+/* ─────────────────────────────────────────────
+   Divider
+───────────────────────────────────────────── */
+
+.paradoxes-playground__divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--border-subtle) 50%,
+    transparent 100%
+  );
+  margin: var(--space-xl) 0;
+}
+
+/* ─────────────────────────────────────────────
+   Upcoming experiments
+───────────────────────────────────────────── */
+
+.paradoxes-playground__upcoming-intro {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 520px;
+  margin: 0 0 var(--space-xl) 0;
+}
+
+.paradoxes-playground__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.paradoxes-playground__soon-card {
+  background: var(--bg-elevated);
+  border: 1px dashed var(--border-subtle);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-height: 180px;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.paradoxes-playground__soon-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.paradoxes-playground__soon-codename {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--code);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.paradoxes-playground__soon-hint {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.paradoxes-playground__soon-status {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  letter-spacing: 0.15em;
+  margin-top: auto;
+}
+
+/* ─────────────────────────────────────────────
+   Responsive
+───────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .paradoxes-playground__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .paradoxes-playground__image-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 768px) {
+  .paradoxes-playground {
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+  }
+
+  .paradoxes-playground__container {
+    padding: 0 var(--space-lg);
+  }
+
+  .paradoxes-playground__content {
+    padding: var(--space-lg);
+  }
+
+  .paradoxes-playground__story p {
+    font-size: var(--text-base);
+  }
+
+  .paradoxes-playground__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .paradoxes-playground__actions {
+    flex-direction: column;
+  }
+
+  .paradoxes-playground__btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .paradoxes-playground__container {
+    padding: 0 var(--space-md);
+  }
+
+  .paradoxes-playground__content {
+    padding: var(--space-md);
+  }
+
+  .paradoxes-playground__image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .paradoxes-playground__meta {
+    font-size: 10px;
+  }
+}
