@@ -43,7 +43,7 @@ export default function ParadoxesPlayground() {
       aria-label="Paradoxes playground experiments"
     >
       <div className="paradoxes-playground__container">
-        {/* ─── Featured Experiment ─── */}
+        {/* ─── Featured Experiment — Placeholder ─── */}
         <motion.div
           className="paradoxes-playground__featured"
           variants={containerVariants}
@@ -59,94 +59,28 @@ export default function ParadoxesPlayground() {
           </motion.span>
 
           <motion.article
-            className="paradoxes-playground__card"
+            className="paradoxes-playground__placeholder-card"
             variants={itemVariants}
           >
-            {/* Image */}
-            <a
-              href="https://uchiha-itachi-2026.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="paradoxes-playground__image-link"
-              aria-label="View Uchiha Itachi live site"
-            >
-              <div className="paradoxes-playground__image-wrapper">
-                <img
-                  src="/images/itachi-preview.jpg"
-                  alt="Uchiha Itachi tribute site — Sharingan eyes with Japanese calligraphy"
-                  className="paradoxes-playground__image"
-                  loading="lazy"
-                />
-                <div className="paradoxes-playground__image-overlay">
-                  <span className="paradoxes-playground__view-live">
-                    VIEW LIVE →
-                  </span>
-                </div>
-              </div>
-            </a>
-
-            {/* Content */}
-            <div className="paradoxes-playground__content">
-              <div className="paradoxes-playground__meta">
-                <span className="paradoxes-playground__meta-item">
-                  VANILLA JS
-                </span>
-                <span className="paradoxes-playground__meta-dot">·</span>
-                <span className="paradoxes-playground__meta-item">
-                  ZERO DEPENDENCIES
-                </span>
-                <span className="paradoxes-playground__meta-dot">·</span>
-                <span className="paradoxes-playground__meta-item">
-                  SHIPPED
-                </span>
-              </div>
-
-              <h2 className="paradoxes-playground__title">
-                Uchiha Itachi
+            <div className="paradoxes-playground__placeholder-inner">
+              <span className="paradoxes-playground__placeholder-status">
+                [ IN THE WORKSHOP ]
+              </span>
+              <h2 className="paradoxes-playground__placeholder-title">
+                Featured experiment{' '}
+                <em className="paradoxes-playground__gradient-word">
+                  incoming
+                </em>
+                .
               </h2>
-
-              <div className="paradoxes-playground__story">
-                <p>
-                  I wanted to see if restraint could feel like{' '}
-                  <em className="paradoxes-playground__gradient-word">
-                    cinema
-                  </em>
-                  .
-                </p>
-                <p>
-                  So I closed every tab. Uninstalled every library. Started
-                  with a blank HTML file and a stubborn idea — that vanilla
-                  JavaScript, given enough obsession, could do things people
-                  reach for frameworks to accomplish.
-                </p>
-                <p>
-                  Cursor-tracking Sharingan. Scroll-driven narrative.
-                  Bilingual JP/EN typography. Frame animations. All of it,
-                  no dependencies.
-                </p>
-                <p className="paradoxes-playground__story-punch">
-                  Turns out, the constraint was the point.
-                </p>
-              </div>
-
-              <div className="paradoxes-playground__actions">
-                <a
-                  href="https://uchiha-itachi-2026.netlify.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="paradoxes-playground__btn paradoxes-playground__btn--primary"
-                >
-                  View Live →
-                </a>
-                <a
-                  href="https://github.com/The-Python-Dev/Uchiha_Itachi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="paradoxes-playground__btn paradoxes-playground__btn--ghost"
-                >
-                  Source Code
-                </a>
-              </div>
+              <p className="paradoxes-playground__placeholder-copy">
+                Something new is being built in the background. When it's
+                ready, it'll live here — no filler, no placeholders pretending
+                otherwise.
+              </p>
+              <span className="paradoxes-playground__placeholder-tag">
+                Check back soon.
+              </span>
             </div>
           </motion.article>
         </motion.div>
