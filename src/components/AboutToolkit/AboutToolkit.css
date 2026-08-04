@@ -1,0 +1,220 @@
+/* ─────────────────────────────────────────────
+   AboutToolkit — 10 disciplines + "what I don't do"
+───────────────────────────────────────────── */
+
+.about-toolkit {
+  background: var(--bg-primary);
+  padding: 8rem 0;
+  position: relative;
+}
+
+.about-toolkit__container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.about-toolkit__intro {
+  max-width: 720px;
+  margin-bottom: 4rem;
+}
+
+.about-toolkit__label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--primary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+}
+
+.about-toolkit__headline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-md) 0;
+}
+
+.about-toolkit__gradient-word {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  background: linear-gradient(
+    135deg,
+    var(--primary) 0%,
+    var(--code) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-toolkit__subcopy {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Grid — 2 columns on desktop, 1 on mobile */
+.about-toolkit__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: 6rem;
+}
+
+.about-toolkit__card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md, 12px);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-toolkit__card:hover {
+  border-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.about-toolkit__card-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+}
+
+.about-toolkit__card-number {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--code);
+  letter-spacing: 0.2em;
+  flex-shrink: 0;
+}
+
+.about-toolkit__card-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.75vw, 1.35rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.about-toolkit__card-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-toolkit__card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.about-toolkit__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  background: var(--bg-deep);
+}
+
+/* "What I don't do" subsection */
+.about-toolkit__not-offered {
+  background: var(--bg-deep);
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-lg, 16px);
+  padding: var(--space-xl);
+  max-width: 820px;
+}
+
+.about-toolkit__not-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.about-toolkit__not-intro {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.about-toolkit__not-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.about-toolkit__not-item {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.about-toolkit__not-item::before {
+  content: '×';
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .about-toolkit__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-toolkit {
+    padding: 6rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-toolkit__container {
+    padding: 0 var(--space-lg);
+  }
+
+  .about-toolkit__card {
+    padding: var(--space-md);
+  }
+
+  .about-toolkit__not-offered {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-toolkit__container {
+    padding: 0 var(--space-md);
+  }
+}

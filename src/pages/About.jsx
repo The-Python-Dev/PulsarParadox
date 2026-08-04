@@ -1,20 +1,19 @@
-/**
- * src/pages/About.jsx
- * Route: /about
- */
+import AboutHero from '../components/AboutHero';
+import AboutValues from '../components/AboutValues';
+import AboutJourney from '../components/AboutJourney';
+import AboutToolkit from '../components/AboutToolkit';
+import AboutPersonalTouch from '../components/AboutPersonalTouch';
+import AboutCTA from '../components/AboutCTA';
 
-import './About.css';
-
-const About = () => {
+export default function About() {
   return (
-    <main className="page about-page">
-      <div className="page-placeholder">
-        <span className="placeholder-label">// ABOUT</span>
-        <h1>About Page</h1>
-        <p>Phase 4 — coming soon.</p>
-      </div>
+    <main>
+      <AboutHero />
+      <AboutValues />
+      <AboutJourney />
+      <AboutToolkit />
+      <AboutPersonalTouch />
+      <AboutCTA />
     </main>
   );
-};
-
-export default About;
+}

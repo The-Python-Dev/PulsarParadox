@@ -1,0 +1,123 @@
+export const toolkit = [
+  {
+    id: 'tk-01',
+    number: '01',
+    title: 'Frontend Engineering',
+    description: `Modern React interfaces built as reusable, maintainable components — not one-off pages held together by hope.`,
+    tags: ['React', 'Vite', 'JSX', 'React Router', 'Lazy Loading'],
+  },
+  {
+    id: 'tk-02',
+    number: '02',
+    title: 'Design Systems',
+    description: `Consistent visual systems where typography, spacing, color, motion, and components all speak the same language.`,
+    tags: [
+      'Design Tokens',
+      'Typography',
+      'Visual Language',
+      'Reusable Component Architecture',
+    ],
+  },
+  {
+    id: 'tk-03',
+    number: '03',
+    title: 'Website Architecture',
+    description: `Turning vague ideas into clear pages, purposeful sections, and user journeys that actually go somewhere.`,
+    tags: [
+      'Information Hierarchy',
+      'Page Planning',
+      'User Flows',
+      'CTA Strategy',
+    ],
+  },
+  {
+    id: 'tk-04',
+    number: '04',
+    title: 'Motion & Interaction',
+    description: `Animation used to guide attention and add character, not to prove the site can move.`,
+    tags: [
+      'Framer Motion',
+      'Animation Choreography',
+      'Scroll Interaction',
+      'Reduced Motion',
+    ],
+  },
+  {
+    id: 'tk-05',
+    number: '05',
+    title: 'Copy & Messaging',
+    description: `Headlines, CTAs, microcopy, FAQs — the words that make a website actually communicate.`,
+    tags: ['Headlines', 'CTAs', 'Microcopy', 'FAQs', 'Brand Voice'],
+  },
+  {
+    id: 'tk-06',
+    number: '06',
+    title: 'Brand & Identity',
+    description: `Names, taglines, positioning, voice, visual direction — shaping how a business feels, not just how it looks.`,
+    tags: [
+      'Naming',
+      'Positioning',
+      'Taglines',
+      'Visual Direction',
+      'Brand Story',
+    ],
+  },
+  {
+    id: 'tk-07',
+    number: '07',
+    title: 'Python & Tooling',
+    description: `Focused desktop apps, scripts, and utilities — for when the tool you need doesn't exist yet.`,
+    tags: ['Python', 'Tkinter', 'PyQt6', 'PyInstaller', 'Pillow'],
+  },
+  {
+    id: 'tk-08',
+    number: '08',
+    title: 'Shipping & Deployment',
+    description: `Taking projects from local development to real production environments, and fixing whatever breaks on the way.`,
+    tags: [
+      'Git',
+      'GitHub',
+      'Netlify',
+      'Production Builds',
+      'Deployment Debugging',
+    ],
+  },
+  {
+    id: 'tk-09',
+    number: '09',
+    title: 'Creative Experiments',
+    description: `Interactive projects built to test ideas, push techniques, and explore what conventional client work usually won't allow.`,
+    tags: [
+      'Vanilla JavaScript',
+      'Zero Dependencies',
+      'Scroll Narratives',
+      'Creative Coding',
+    ],
+  },
+  {
+    id: 'tk-10',
+    number: '10',
+    title: 'SEO Foundations',
+    description: `Structuring sites so both search engines and people can understand them — foundational SEO, not enterprise-level consulting.`,
+    tags: [
+      'Metadata',
+      'Heading Structure',
+      'URLs',
+      'Alt Text',
+      'Internal Linking',
+    ],
+  },
+];
+
+export const notOffered = {
+  intro: `Most freelance websites promise everything. Here's what I'm being honest about not doing — because pretending doesn't help either of us.`,
+  items: [
+    'No WordPress',
+    'No native mobile apps',
+    'No enterprise infrastructure',
+    'No advanced SEO consulting',
+    'No professional graphic design from scratch',
+    'No e-commerce (yet)',
+    'No large-team agency work',
+  ],
+};
